@@ -1,6 +1,10 @@
 class utils:
 
     def reversed( num : int) -> int:
+
+        if type(num) is not int:
+            raise TypeError("Reversed input must be an integer")
+
         str_num = str(num)
         reversed_str_num = str_num[::-1]
         if num < 0:
@@ -10,6 +14,9 @@ class utils:
     def formatter(num : int) -> tuple[str, str]:
         num_oct : int; num_bin : int
         str_oct : str; str_bin : str
+
+        if type(num) is not int:
+                raise TypeError("Formatter input must be an integer")
 
         num_oct = num; num_bin = num
         str_oct = "" ; str_bin = ""
@@ -25,3 +32,4 @@ class utils:
                     num_bin = num_bin // 2
 
         return str_bin, str_oct
+
